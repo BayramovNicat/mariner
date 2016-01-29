@@ -21,12 +21,140 @@ body
 	background-color: #ECEEF5
 	font-family: "Roboto Light"
 	font-size 15px
-.side-nav
+.side-chat
 	position fixed
 	background-color #fff
 	width 335px
 	height 100%
 	right 0
+	.user-panel
+		position relative
+		height 109px
+		border-bottom 1px solid #eceef5
+		.ava
+			width 40px
+			height 40px
+			border-radius 20px
+			position absolute
+			top calc(50% - 20px)
+			left 40px
+		.name
+			position absolute
+			top calc(50% - 20px)
+			height 40px
+			line-height 20px
+			left 90px
+			width 0
+			color #192d57
+		.actions
+			position absolute
+			list-style none
+			padding 0
+			right 40px;
+			top calc(50% - 15px)
+			li
+				margin-left 10px
+				display inline-block
+				a
+					display inline-block
+					background-color: #eceef5
+					border-radius 15px
+					width 30px
+					height 30px
+					line-height 30px
+					text-align center
+					color #335baf
+	.lead
+		color #4a4a4a
+		font-family "Roboto Thin"
+		font-size 30px
+		margin-left 40px
+		margin-bottom 0px
+		margin-top 34px
+	.list-group
+		.list-group-item
+			border none
+			font-family 'Roboto'
+			font-size 15px
+			position relative
+			margin 0
+			color #335baf
+			height 70px
+			&:hover,
+			&:focus
+				color #335baf
+				background-color rgba(236, 238, 245, 0.2)
+			&:first-child,
+			&:last-child
+				border-radius 0
+			&:after
+				content ''
+				height 1px
+				width calc(100% - 40px)
+				position absolute
+				right 0
+				bottom: 0
+				background-color #eceef5
+			.ava
+				width 30px
+				height 30px
+				border-radius 20px
+				position absolute
+				top calc(50% - 15px)
+				left 40px
+			.name
+				position absolute
+				top calc(50% - 20px)
+				height 40px
+				line-height 40px
+				left 80px
+				color #192d57
+			.online
+				&:before
+					content: ''
+					width 12px
+					height 12px
+					border 3px solid #7ed321
+					position absolute
+					right 40px
+					top calc(50% - 6px)
+					border-radius 12px
+			.offline
+				position absolute
+				top calc(50% - 6px)
+				right 40px
+				color #192d57
+	.search-user
+		background-color #f7f8fb
+		width 100%
+		height 80px
+		position absolute
+		bottom 0
+		left 0
+		.fa-search
+			position absolute
+			left 32px
+			z-index 2
+			color #335baf
+			font-size 16px
+			top calc(50% - 8px)
+		input
+			position absolute
+			left 20px
+			width 260px
+			border-radius 4px
+			border none
+			height 40px
+			line-height 40px
+			padding 0 20px 0 40px
+			outline none
+			top calc(50% - 20px)
+		.fa-plus
+			position absolute
+			right 20px
+			color #7d9de1
+			font-size 16px
+			top calc(50% - 8px)
 .view-container
 	padding-right 335px
 	header
@@ -78,7 +206,7 @@ body
 		min-height 40px
 		height 40px
 		background-color #192D57
-		margin-bottom 34px
+		margin-bottom 0
 		ul
 			list-style none
 			padding 0
@@ -123,6 +251,7 @@ body
 		color #4a4a4a
 		font-family "Roboto Thin"
 		font-size 30px
+		margin-top 34px
 	.content-sidebar
 		.lead
 			color #898fa5
