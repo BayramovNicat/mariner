@@ -1,0 +1,300 @@
+placeholder()
+    &::-webkit-input-placeholder
+        {block}
+    &:-moz-placeholder
+        {block}
+    &::-moz-placeholder
+        {block}
+    &:-ms-input-placeholder
+        {block}
+
+border-radius()
+  -webkit-border-radius: arguments
+  -moz-border-radius: arguments
+  border-radius: arguments
+
+html, body
+	height 100%
+	line-height 100%
+	margin 0
+body
+	background-color: #ECEEF5
+	font-family: "Roboto Light"
+	font-size 15px
+.side-nav
+	position fixed
+	background-color #fff
+	width 335px
+	height 100%
+	right 0
+.view-container
+	padding-right 335px
+	header
+		background-color #335baf
+		height 70px
+		color #fff
+		.row
+			>div
+				height: 70px
+				.logo
+					font-family 'PT Serif'
+					font-size 20px
+					color #fff
+					padding-left 40px
+					position relative
+					&:hover
+						text-decoration none
+					&:focus
+						text-decoration none
+					.fa-anchor
+						position absolute
+						top -3px
+						left 0
+				.search
+					width 100%
+					position relative
+					.fa-search
+						position absolute
+						left 12px
+						top 12px
+						font-size 16px
+						color #91A6D1
+					input
+						width 100%
+						background-color #476BB7
+						border none
+						padding 0 40px
+						height 40px
+						line-height 40px
+						border-radius 4px
+						outline none
+						font-size 15px
+						+placeholder()
+            				color #91A6D1
+            				font-size 15px
+	.navbar
+		border-radius 0
+		color #fff
+		min-height 40px
+		height 40px
+		background-color #192D57
+		margin-bottom 34px
+		ul
+			list-style none
+			padding 0
+			li
+				display inline-block
+				margin-right 18px
+				a
+					display inline-block
+					height 40px
+					line-height 40px
+					font-family "Roboto Light"
+					font-size 15px
+					color #fff
+					text-decoration none
+					position relative
+					&.active:after
+						content ''
+						position absolute
+						bottom 0
+						display block
+						width 100%
+						height 3px
+						background-color #f8e71c
+					&.dropdown
+						padding-right 20px
+					.fa-angle-down
+						font-size 20px
+						margin-top 10px
+						position absolute
+						right 0
+						top 1px
+					span.badge
+						color #f8e71c
+						background-color transparent
+						position absolute
+						top 5px
+						right -6px
+						width 0
+						height auto
+						font-size 10px
+	.lead
+		color #4a4a4a
+		font-family "Roboto Thin"
+		font-size 30px
+	.content-sidebar
+		.lead
+			color #898fa5
+		.list-group
+			background-color #fff
+			box-shadow 0 1px 3px 0 rgba(0,0,0,0.1)
+			.list-group-item
+				border none
+				font-family 'Roboto'
+				font-size 15px
+				position relative
+				margin 0
+				color #335baf
+				&:hover,
+				&:focus
+					color #335baf
+    				background-color rgba(236, 238, 245, 0.2)
+				&:first-child,
+				&:last-child
+					border-radius 0
+				&:last-child:after
+					height 0
+				&:after
+					content ''
+					height 1px
+					width calc(100% - 20px)
+					position absolute
+					right 0
+					bottom: 0
+					background-color #eceef5
+		#navigate 
+			.list-group-item
+				padding 20px 20px 20px 50px
+				&:before
+					content ''
+					width 12px
+					height 12px
+					border 3px solid #eceef5
+					position absolute
+					left 20px
+					top calc(50% - 6px)
+					-webkit-border-radius 12px
+					-moz-border-radius 12px
+					border-radius 12px
+				.fa
+					position absolute
+					right 20px
+					color #c0c3cd
+					font-size 20px
+					top calc(50% - 10px)
+					
+		#connect
+			.list-group-item
+				height 80px
+				.ava
+					width 40px
+					height 40px
+					border-radius 20px
+					position absolute
+					top calc(50% - 20px)
+					left 20px
+				.name
+					position absolute
+					top calc(50% - 20px)
+					height 40px
+					line-height 20px
+					left 70px
+					width 0
+					color #192d57
+				.fa-plus
+					position absolute
+					top calc(50% - 7px)
+					right 20px
+					color #7d9de1
+	.thumbnail
+		border-radius 0px
+		padding 0
+		box-shadow 0 1px 3px 0 rgba(0,0,0,0.1)
+		border none
+		.feed-info
+			font-family "Roboto"
+			color #75819A
+			padding 20px
+			.user
+				position relative
+				height 40px
+				display block
+				.ava
+					width 40px
+					height 40px
+					border-radius 20px
+					position absolute
+					top calc(50% - 20px)
+					left 0px
+				.name
+					position absolute
+					top calc(50% - 20px)
+					height 40px
+					line-height 20px
+					left 50px
+					width 0
+					color #192d57
+			.country
+				height 40px
+				line-height 20px
+				display inline-block
+				width 0
+			.date
+				height 40px
+				line-height 20px
+				display inline-block
+			.country, .date
+				&:before
+					content ''
+					position absolute
+					left 0px
+					display inline-block
+					height 40px
+					width 1px
+					background-color #eceef5
+			.shares
+				display inline-block
+				float right
+				color #335BC3
+		.feed-text
+			padding: 0 20px
+		.feed-actions
+			list-style none
+			padding 0 20px
+			height 48px
+			line-height 48px
+			margin-bottom 0
+			li
+				display inline-block
+				width 60px
+				a
+					text-decoration none
+					color #75819A
+					font-size 15px
+					.fa
+						color #335baf
+						margin-right 5px
+		.feed-comment
+			height 80px
+			padding 20px
+			background-color #F7F8FB
+			.user
+				position relative
+				height 40px
+				display block
+				.ava
+					width 40px
+					height 40px
+					border-radius 20px
+					position absolute
+					top calc(50% - 20px)
+					left 0px
+				.name
+					position absolute
+					top calc(50% - 20px)
+					height 40px
+					line-height 20px
+					left 50px
+					width 0
+					color #192d57
+			.text
+				color #727E98
+				&:before
+					content ''
+					position absolute
+					left 0px
+					display inline-block
+					height 40px
+					width 1px
+					background-color #eceef5
