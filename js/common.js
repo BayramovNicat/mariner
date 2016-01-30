@@ -16,10 +16,10 @@ $(document).ready(function(){
 	sidebar_width();
 	$('#new-boats').css({'z-index':'10','height':$('#menu').css('height'),'width':$('#menu').css('width'), 'position':'absolute','top':'0','left':parseInt($('#menu').css('width'))});
 	$('#menu a').on('click', function(){
-		TweenMax.to($($(this).data('target')), 0.2, {left:'0',ease: Power3.easeOut});
+		TweenMax.to($($(this).data('target')), 0.2, {x:-1*parseInt($('#menu').css('width')),ease:Power0.easeNone});
 	});
 	$('.menu-back').on('click',function(){
-		TweenMax.to($(this).parent(), 0.2, {left:parseInt($('#menu').css('width')),ease: Power3.easeOut});
+		TweenMax.to($(this).parent(), 0.2, {x:0,ease:Power0.easeNone});
 	});
 	
 	// console.log($('#menu').css('width'));
