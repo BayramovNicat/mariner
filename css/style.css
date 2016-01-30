@@ -345,7 +345,7 @@ body {
 .view-container .content-sidebar .navigate .list-group-item {
   padding: 20px 20px 20px 50px;
 }
-.view-container .content-sidebar .navigate .list-group-item:before {
+.view-container .content-sidebar .navigate .list-group-item:not(.menu-back):before {
   content: '';
   width: 12px;
   height: 12px;
@@ -359,9 +359,16 @@ body {
   -moz-border-radius: 12px;
   border-radius: 12px;
 }
-.view-container .content-sidebar .navigate .list-group-item .fa {
+.view-container .content-sidebar .navigate .list-group-item .fa-angle-right {
   position: absolute;
   right: 20px;
+  color: #c0c3cd;
+  font-size: 20px;
+  top: calc(50% - 10px);
+}
+.view-container .content-sidebar .navigate .list-group-item .fa-angle-left {
+  position: absolute;
+  left: 20px;
   color: #c0c3cd;
   font-size: 20px;
   top: calc(50% - 10px);

@@ -12,17 +12,20 @@ function sidebar_width(){
 	sidebar = $('.content-sidebar');
 	sidebar.css('width',sidebar.parent().width());
 }
-$(document).ready(function(){
-	sidebar_width();
-	$('#new-boats').css({'z-index':'10','height':$('#menu').css('height'),'width':$('#menu').css('width'), 'position':'absolute','top':'0','left':parseInt($('#menu').css('width'))});
-	$('#menu a').on('click', function(){
-		TweenMax.to($($(this).data('target')), 0.2, {x:-1*parseInt($('#menu').css('width')),ease:Power0.easeNone});
+function sidebar_submenu(){
+	$('.submenu').css({'z-index':'10','height':$('#menu').css('height'),'width':$('#menu').css('width'), 'position':'absolute','top':'0','left':parseInt($('#menu').css('width'))+10});
+	$('#menu a.dropdown').on('click', function(){
+		TweenMax.to($($(this).data('target')), 0.3, {x:-1*(parseInt($('#menu').css('width'))+10),ease:Power4.easeNone});
+		return false;
 	});
 	$('.menu-back').on('click',function(){
-		TweenMax.to($(this).parent(), 0.2, {x:0,ease:Power0.easeNone});
+		TweenMax.to($(this).parent(), 0.3, {x:0,ease:Power4.easeNone});
+		return false;
 	});
-	
-	// console.log($('#menu').css('width'));
+}
+$(document).ready(function(){
+	sidebar_width();
+	sidebar_submenu();
 });
 
 $( window ).resize(function() {

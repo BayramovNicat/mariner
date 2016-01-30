@@ -285,7 +285,7 @@ body
 		.navigate
 			.list-group-item
 				padding 20px 20px 20px 50px
-				&:before
+				&:not(.menu-back):before
 					content ''
 					width 12px
 					height 12px
@@ -296,9 +296,15 @@ body
 					-webkit-border-radius 12px
 					-moz-border-radius 12px
 					border-radius 12px
-				.fa
+				.fa-angle-right
 					position absolute
 					right 20px
+					color #c0c3cd
+					font-size 20px
+					top calc(50% - 10px)
+				.fa-angle-left
+					position absolute
+					left 20px
 					color #c0c3cd
 					font-size 20px
 					top calc(50% - 10px)
