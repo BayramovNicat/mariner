@@ -12,8 +12,10 @@ function sidebar_width(){
 	sidebar = $('.content-sidebar');
 	sidebar.css('width',sidebar.parent().width());
 }
-function sidebar_submenu(){
+function sidebar_submenu_init(){
 	$('.submenu').css({'z-index':'10','height':$('#menu').css('height'),'width':$('#menu').css('width'), 'position':'absolute','top':'0','left':parseInt($('#menu').css('width'))+10});
+}
+function sidebar_submenu_click(){
 	$('#menu a.dropdown').on('click', function(){
 		TweenMax.to($($(this).data('target')), 0.3, {x:-1*(parseInt($('#menu').css('width'))+10),ease:Power4.easeNone});
 		return false;
@@ -25,9 +27,11 @@ function sidebar_submenu(){
 }
 $(document).ready(function(){
 	sidebar_width();
-	sidebar_submenu();
+	sidebar_submenu_init();
+	sidebar_submenu_click();
 });
 
 $( window ).resize(function() {
 	sidebar_width();
+	sidebar_submenu_init();
 });

@@ -11,14 +11,20 @@ body {
 }
 .side-chat {
   position: fixed;
-  background-color: #fff;
   width: 335px;
   height: 100%;
   right: 0;
+  z-index: 100;
+}
+.side-chat .side-chat-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 .side-chat .user-panel {
   position: relative;
-  height: 109px;
+  height: 110px;
+  background-color: #fff;
   border-bottom: 1px solid #eceef5;
 }
 .side-chat .user-panel .ava {
@@ -172,9 +178,6 @@ body {
   color: #7d9de1;
   font-size: 16px;
   top: calc(50% - 8px);
-}
-.view-container {
-  padding-right: 335px;
 }
 .view-container header {
   background-color: #335baf;
