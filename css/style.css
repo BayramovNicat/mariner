@@ -30,7 +30,7 @@ a.btn-floating.chat-btn {
 }
 .side-chat {
   position: fixed;
-  width: 335px;
+  width: 0px;
   height: 100%;
   right: 0;
   z-index: 100;
@@ -45,6 +45,14 @@ a.btn-floating.chat-btn {
   position: relative;
   width: 100%;
   height: 100%;
+}
+.side-chat .side-chat-content #user-list,
+.side-chat .side-chat-content #message-list {
+  width: 100%;
+  height: calc(100% - 110px);
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
 }
 .side-chat .user-panel {
   position: relative;
@@ -94,6 +102,10 @@ a.btn-floating.chat-btn {
   text-align: center;
   color: #335baf;
 }
+.side-chat a.chat-back:hover,
+.side-chat a.chat-back:focus {
+  text-decoration: none;
+}
 .side-chat .lead {
   color: #4a4a4a;
   font-family: "Roboto Thin";
@@ -101,6 +113,18 @@ a.btn-floating.chat-btn {
   margin-left: 40px;
   margin-bottom: 0px;
   margin-top: 34px;
+}
+.side-chat .lead .fa {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  color: #335baf;
+}
+.side-chat .list-group {
+  height: calc(100% - 156px);
+  overflow: hidden;
+  overflow-y: visible;
+  margin-bottom: 0;
 }
 .side-chat .list-group .list-group-item {
   border: none;
@@ -167,7 +191,62 @@ a.btn-floating.chat-btn {
   right: 40px;
   color: #192d57;
 }
-.side-chat .search-user {
+.side-chat .list-group .message-dialog {
+  margin: 10px 20px;
+  position: relative;
+}
+.side-chat .list-group .message-dialog .ava {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  position: absolute;
+  top: 4px;
+  left: 0;
+}
+.side-chat .list-group .message-dialog .message-text.left {
+  padding-left: 40px;
+  text-align: left;
+}
+.side-chat .list-group .message-dialog .message-text.left p {
+  box-shadow: 0 1px 2px 0 rgba(234,236,238,0.8);
+  border: 1px solid #dadee2;
+}
+.side-chat .list-group .message-dialog .message-text.left p:before {
+  content: '\f0d9';
+  left: -6px;
+  color: #dadee2;
+}
+.side-chat .list-group .message-dialog .message-text.right {
+  padding-right: 0px;
+  text-align: right;
+}
+.side-chat .list-group .message-dialog .message-text.right p {
+  background-color: #335baf;
+  color: #fff;
+}
+.side-chat .list-group .message-dialog .message-text.right p:before {
+  content: '\f0da';
+  right: -5px;
+  color: #335baf;
+}
+.side-chat .list-group .message-dialog .message-text p {
+  text-align: left;
+  display: inline-block;
+  padding: 12px 17px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+.side-chat .list-group .message-dialog .message-text p:before {
+  display: inline-block;
+  font-family: 'FontAwesome';
+  position: absolute;
+  top: 10px;
+}
+.side-chat .bottom-input {
   background-color: #f7f8fb;
   width: 100%;
   height: 80px;
@@ -175,7 +254,16 @@ a.btn-floating.chat-btn {
   bottom: 0;
   left: 0;
 }
-.side-chat .search-user .fa-search {
+.side-chat .bottom-input .search-input,
+.side-chat .bottom-input .message-input {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 40px;
+  opacity: 0.5;
+  visibility: hidden;
+}
+.side-chat .bottom-input .fa {
   position: absolute;
   left: 32px;
   z-index: 2;
@@ -183,10 +271,10 @@ a.btn-floating.chat-btn {
   font-size: 16px;
   top: calc(50% - 8px);
 }
-.side-chat .search-user input {
+.side-chat .bottom-input input {
   position: absolute;
   left: 20px;
-  width: 260px;
+  width: calc(100% - 40px);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -195,14 +283,6 @@ a.btn-floating.chat-btn {
   line-height: 40px;
   padding: 0 20px 0 40px;
   outline: none;
-  top: calc(50% - 20px);
-}
-.side-chat .search-user .fa-plus {
-  position: absolute;
-  right: 20px;
-  color: #7d9de1;
-  font-size: 16px;
-  top: calc(50% - 8px);
 }
 .view-container header {
   background-color: #335baf;
@@ -559,4 +639,113 @@ a.btn-floating.chat-btn {
   height: 40px;
   width: 1px;
   background-color: #eceef5;
+}
+.loader {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  margin: 0px auto;
+  width: 40px;
+  top: calc(50% - 20px);
+  left: calc(50% - 20px);
+}
+.loader:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite;
+  stroke: #335baf;
+  stroke-linecap: round;
+}
+@-moz-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@-o-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
 }

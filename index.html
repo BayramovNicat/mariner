@@ -39,39 +39,78 @@
                     <li><a href="#"><i class="fa fa-times"></i></a></li>
                 </ul>
             </div>
-            <p class="lead">Chat</p>
-            <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <img class="ava" src="img/users/34.jpg" alt="">
-                    <span class="name">Ceyhun Ashurbeyov</span>
-                    <i class="online"></i>
-                </a>
-                <a href="#" class="list-group-item">
-                    <img class="ava" src="img/users/35.jpg" alt="">
-                    <span class="name">Mammad Suleymanov</span>
-                    <i class="online"></i>
-                </a>
-                <a href="#" class="list-group-item">
-                    <img class="ava" src="img/users/36.jpg" alt="">
-                    <span class="name">Alakbar Babayev</span>
-                    <span class="offline">5 min</span>
-                </a>
-                <a href="#" class="list-group-item">
-                    <img class="ava" src="img/users/37.jpg" alt="">
-                    <span class="name">Azad Hajizade</span>
-                    <i class="online"></i>
-                </a>
-                <a href="#" class="list-group-item">
-                    <img class="ava" src="img/users/38.jpg" alt="">
-                    <span class="name">John McCoist</span>
-                    <i class="online"></i>
-                </a>
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
             </div>
-            <div class="search-user">
-                <i class="fa fa-search"></i>
-                <input placeholder="Search" type="text">
-                <i class="fa fa-plus"></i>
-            </div>
+            <section id="user-list">
+                <p class="lead">Chat</p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <img class="ava" src="img/users/34.jpg" alt="">
+                        <span class="name">Ceyhun Ashurbeyov</span>
+                        <i class="online"></i>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <img class="ava" src="img/users/35.jpg" alt="">
+                        <span class="name">Mammad Suleymanov</span>
+                        <i class="online"></i>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <img class="ava" src="img/users/36.jpg" alt="">
+                        <span class="name">Alakbar Babayev</span>
+                        <span class="offline">5 min</span>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <img class="ava" src="img/users/37.jpg" alt="">
+                        <span class="name">Azad Hajizade</span>
+                        <i class="online"></i>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <img class="ava" src="img/users/38.jpg" alt="">
+                        <span class="name">John McCoist</span>
+                        <i class="online"></i>
+                    </a>
+                </div>
+                <div class="bottom-input">
+                    <div class="search-input">
+                        <i class="fa fa-search"></i>
+                        <input placeholder="Search" type="text">
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="message-list">
+                <a href="#" class="chat-back">
+                    <p class="lead"><i class="fa fa-angle-left"></i>Ceyhun</p>
+                </a>
+                <div class="list-group">
+                    <div class="message-dialog">
+                        <img class="ava" src="img/users/34.jpg" alt="">
+                        <div class="message-text left">
+                            <p>Obcaecati beatae earum quisquam. Illo eum assumenda officia voluptatibus aspernatur ipsa labore maiores temporibus et quibusdam! Pariatur animi saepe dicta numquam reprehenderit.</p>
+                        </div>
+                    </div>
+                    <div class="message-dialog">
+                        <div class="message-text right">
+                            <p>Ea dicta cumque minus dolor aspernatur quasi ad error laborum ab assumenda officia tempore sequi, aliquam, totam culpa nisi saepe sit voluptates!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-input">
+                    <div class="message-input">
+                        <i class="fa fa-comment"></i>
+                        <form id="message-form" action="#">
+                            <input placeholder="Message" autocomplete="off" name="message" type="text">
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            
+            
         </div>
     </div>
     <div class="view-container">
