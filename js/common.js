@@ -64,15 +64,19 @@ $(document).ready(function(){
 	});
 
 	$('#message-form').submit(function(){
-		var html = '<div class="message-dialog" style="opacity: 0; margin-top: 110px">'+
-                        '<div class="message-text right">'+
-                            '<p>'+$(this).children('input').val()+'</p>'+
-                        '</div>'+
-                    '</div>';
-		$('#message-list .list-group').append(html);
-		TweenMax.to($('#message-list .list-group .message-dialog:last-child'), 0.3, {opacity:1, marginTop: 10, ease:Back.easeInOut});
-		
-		$(this).children('input').val('');
+		if($(this).children('input').val()){
+			var html = '<div class="message-dialog" style="opacity: 0; margin-top: 110px">'+
+	                        '<div class="message-text right">'+
+	                            '<p>'+$(this).children('input').val()+'</p>'+
+	                        '</div>'+
+	                    '</div>';
+			$('#message-list .list-group').append(html);
+			TweenMax.to($('#message-list .list-group .message-dialog:last-child'), 0.3, {opacity:1, marginTop: 10, ease:Back.easeInOut});
+			$('#message-list .list-group').animate({
+		        scrollTop: $('#message-list .list-group .message-dialog:last-child').offset().top
+		    }, 800);
+			$(this).children('input').val('');
+		}
 		return false;
 	});
 
