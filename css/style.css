@@ -9,12 +9,33 @@ body {
   font-family: "Roboto Light";
   font-size: 15px;
 }
+a.btn-floating {
+  display: inline-block;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 24px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-color: #335baf;
+  z-index: 101;
+  color: #fff;
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+a.btn-floating.chat-btn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
 .side-chat {
   position: fixed;
   width: 335px;
   height: 100%;
   right: 0;
   z-index: 100;
+  background-color: #fff;
 }
 .side-chat .side-chat-content {
   position: relative;
