@@ -30,7 +30,6 @@ a.btn-floating
 	font-size 24px
 	border-radius 30px
 	background-color #335baf
-	z-index 101
 	color #fff
 	box-shadow 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)
 	&.chat-btn
@@ -44,6 +43,10 @@ a.btn-floating
 	right 0
 	z-index 100
 	background-color #fff
+	visibility hidden
+	box-shadow 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
+	&.active
+		visibility visible
 	.side-chat-content
 		position relative
 		width 100%

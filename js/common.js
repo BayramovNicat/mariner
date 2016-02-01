@@ -21,14 +21,15 @@ $(document).ready(function(){
 	sidebar_submenu_init();
 	sidebar_submenu_click();
 	$(".chat-btn").on('click', function(){
+		$('.side-chat').toggleClass('active');
 		if($(this).hasClass('active')){
 			TweenMax.to($('.side-chat'), 0.3, {width:"80px",ease:Back.easeInOut});
-			TweenMax.to($('.view-container'), 0.3, {paddingRight:"80px",ease:Back.easeInOut});
 		}else{
 			TweenMax.to($('.side-chat'), 0.3, {width:"335px",ease:Back.easeInOut});
-			TweenMax.to($('.view-container'), 0.3, {paddingRight:"335px",ease:Back.easeInOut});
 		}
-		$(this).toggleClass('active');
+	});
+	$('.user-panel .actions .fa-times').on('click', function(){
+		$('.side-chat').toggleClass('active');
 	});
 });
 
