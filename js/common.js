@@ -72,7 +72,7 @@ $(document).ready(function(){
 	                    '</div>';
 			$('#message-list .list-group').append(html);
 			TweenMax.to($('#message-list .list-group .message-dialog:last-child'), 0.3, {opacity:1, marginTop: 10, ease:Back.easeInOut});
-			$('#message-list .list-group').animate({
+			$('#message-list .list-group').stop().animate({
 		        scrollTop: $('#message-list .list-group .message-dialog:last-child').offset().top
 		    }, 800);
 			$(this).children('input').val('');
