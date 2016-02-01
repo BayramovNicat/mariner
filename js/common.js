@@ -21,12 +21,12 @@ $(document).ready(function(){
 	sidebar_submenu_init();
 	sidebar_submenu_click();
 	$(".chat-btn").on('click', function(){
-		$('.side-chat').toggleClass('active');
-		if($(this).hasClass('active')){
-			TweenMax.to($('.side-chat'), 0.3, {width:"80px",ease:Back.easeInOut});
+		if($('.side-chat').hasClass('active')){
+			TweenMax.to($('.side-chat'), 0.3, {width:"0px",ease:Back.easeInOut});
 		}else{
 			TweenMax.to($('.side-chat'), 0.3, {width:"335px",ease:Back.easeInOut});
 		}
+		$('.side-chat').toggleClass('active');
 	});
 	$('.user-panel .actions .fa-times').on('click', function(){
 		$('.side-chat').toggleClass('active');
