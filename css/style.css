@@ -640,6 +640,54 @@ a.btn-floating.chat-btn {
   width: 1px;
   background-color: #eceef5;
 }
+.view-container .thumbnail .feed-comment-write {
+  min-height: 80px;
+  padding: 20px;
+  background-color: #f7f8fb;
+}
+.view-container .thumbnail .feed-comment-write .user {
+  position: relative;
+  height: 40px;
+  display: block;
+}
+.view-container .thumbnail .feed-comment-write .user .ava {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: 0px;
+}
+.view-container .thumbnail .feed-comment-write .user .name {
+  position: absolute;
+  top: calc(50% - 20px);
+  height: 40px;
+  line-height: 20px;
+  left: 50px;
+  width: 0;
+  color: #192d57;
+}
+.view-container .thumbnail .feed-comment-write .user:before {
+  content: '';
+  position: absolute;
+  right: -15px;
+  display: inline-block;
+  height: 40px;
+  width: 1px;
+  background-color: #eceef5;
+}
+.view-container .thumbnail .feed-comment-write textarea {
+  resize: vertical;
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
 .loader {
   visibility: hidden;
   opacity: 0;
